@@ -1,8 +1,8 @@
 services:
   game:
-    image: nginx:alpine
+    build:
+      context: .
+      dockerfile: Dockerfile
     restart: unless-stopped
     ports:
       - "8088:80"
-    volumes:
-      - ./index.html:/usr/share/nginx/html/index.html:ro
